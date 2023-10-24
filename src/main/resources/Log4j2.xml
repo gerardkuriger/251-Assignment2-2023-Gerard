@@ -1,0 +1,18 @@
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config" status="WARN">
+    <Properties>
+        <Property name="layout">%d [%t] %-5level %logger - %m%n</Property>
+    </Properties>
+    <Appenders>
+        <MemAppender name="MemAppender">
+            <PatternLayout pattern="${layout}"/>
+        </MemAppender>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layout}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="MemAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
